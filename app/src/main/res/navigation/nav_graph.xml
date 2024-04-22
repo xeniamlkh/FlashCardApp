@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listOfSetsFragment">
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.example.flashcardapp.ui.ui.CardFragment"
+        android:label="Flash Cards App"
+        tools:layout="@layout/fragment_card">
+        <action
+            android:id="@+id/action_cardFragment_to_listOfCardsFragment"
+            app:destination="@id/listOfCardsFragment"
+            app:popUpTo="@id/listOfSetsFragment" />
+        <argument
+            android:name="setName"
+            app:argType="string" />
+        <argument
+            android:name="cardId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfCardsFragment"
+        android:name="com.example.flashcardapp.ui.ui.ListOfCardsFragment"
+        android:label="Flash Cards App">
+        <action
+            android:id="@+id/action_listOfCardsFragment_to_cardFragment"
+            app:destination="@id/cardFragment"
+            app:popUpTo="@id/listOfSetsFragment" />
+        <argument
+            android:name="setName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_listOfCardsFragment_to_practiceFragment"
+            app:destination="@id/practiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfSetsFragment"
+        android:name="com.example.flashcardapp.ui.ui.ListOfSetsFragment"
+        android:label="Flash Cards App"
+        tools:layout="@layout/fragment_list_of_sets">
+        <action
+            android:id="@+id/action_listOfSetsFragment_to_listOfCardsFragment"
+            app:destination="@id/listOfCardsFragment" />
+        <action
+            android:id="@+id/action_listOfSetsFragment_to_setFragment"
+            app:destination="@id/setFragment"
+            app:popUpTo="@id/listOfSetsFragment" />
+        <action
+            android:id="@+id/action_listOfSetsFragment_to_practiceFragment"
+            app:destination="@id/practiceFragment" />
+        <action
+            android:id="@+id/action_listOfSetsFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setFragment"
+        android:name="com.example.flashcardapp.ui.ui.SetFragment"
+        android:label="Flash Cards App"
+        tools:layout="@layout/fragment_set">
+        <action
+            android:id="@+id/action_setFragment_to_listOfSetsFragment"
+            app:destination="@id/listOfSetsFragment" />
+        <argument
+            android:name="setName"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/practiceFragment"
+        android:name="com.example.flashcardapp.ui.ui.PracticeFragment"
+        android:label="Flash Cards App"
+        tools:layout="@layout/fragment_practice">
+        <argument
+            android:name="setName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_practiceFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.flashcardapp.ui.ui.ResultFragment"
+        android:label="Flash Cards App"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_resultFragment_to_practiceFragment"
+            app:destination="@id/practiceFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_listOfSetsFragment"
+            app:destination="@id/listOfSetsFragment" />
+        <argument
+            android:name="setName"
+            app:argType="string" />
+    </fragment>
+</navigation>

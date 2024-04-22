@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#658d1b</color>
+    <color name="colorOnPrimary">@color/white</color>
+
+    <color name="colorSecondary">#ffd100</color>
+    <color name="colorOnSecondary">@color/black</color>
+
+    <color name="colorPrimaryDark">#4f6e16</color>
+    <color name="colorPrimaryVariant">#4f6e16</color>
+    <color name="colorSecondaryVariant">#d8b102</color>
+    <color name="colorError">#b30000</color>
+
+    <color name="colorCardFront">#b39200</color>
+    <color name="colorCardBack">#548516</color>
+
+    <color name="textColor">@color/white</color>
+    <color name="progressTint">#b39200</color>
+</resources>
