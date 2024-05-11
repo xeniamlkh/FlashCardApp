@@ -2,8 +2,8 @@
 Flash Cards App is **a study project** in Kotlin for Android devices. Please be aware that this project was made for **learning purposes** only and will not be updated or supported further. 
 
 This README file has two paragraphs: 
-1) [Description](https://github.com/xeniamlkh/FlashCardApp/new/master?filename=README.md#description)
-2) [What was used in this project?](https://github.com/xeniamlkh/FlashCardApp/new/master?filename=README.md#what-was-used-in-this-project)
+1) [Description](https://github.com/xeniamlkh/FlashCardApp?tab=readme-ov-file#description)
+2) [What was used in this project?](https://github.com/xeniamlkh/FlashCardApp?tab=readme-ov-file#what-was-used-in-this-project)
 
 ## Description
 Flash Cards App is a flash card application whose function is to create study cards and help users learn something new, such as foreign words, definitions, dates, and so on. 
@@ -89,6 +89,8 @@ This description aims to show the structure of the study project, its functional
 * Flash Cards App has an icon.
 
   <img src="https://github.com/xeniamlkh/FlashCardApp/assets/89986215/00e3bcbe-39a9-4475-958f-34ef3c6aa8d3" width="307" height="633">
+
+* minSdk = 27; targetSdk = 34. Flash Cards App supports platform 8.1 (Oreo) and above.
 
 ## What was used in this project?
 
