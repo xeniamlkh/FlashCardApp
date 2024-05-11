@@ -51,11 +51,13 @@
                 android:clickable="false"
                 android:text="@string/practice"
                 app:icon="@drawable/ic_school"
+                app:layout_constraintEnd_toStartOf="@id/example_add_new_card_btn"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/example_number_of_cards_text" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/add_new_card_btn"
+                android:id="@+id/example_add_new_card_btn"
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,6 +66,7 @@
                 app:icon="@drawable/ic_add"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/example_menu_options_btn"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toEndOf="@id/example_practice_btn" />
 
             <FrameLayout

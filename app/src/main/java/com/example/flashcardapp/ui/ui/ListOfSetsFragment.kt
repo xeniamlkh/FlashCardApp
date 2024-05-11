@@ -1,5 +1,6 @@
 package com.example.flashcardapp.ui.ui
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,12 +52,19 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val screenWidth = requireContext().resources.displayMetrics.widthPixels
+        val screenOrientation = requireActivity().resources.configuration.orientation
+
         viewModel.isDatabaseEmpty().observe(this.viewLifecycleOwner) { booleanAnswer ->
             if (booleanAnswer == true) {
                 binding.spinner.visibility = View.GONE
                 binding.spinnerTitleTextView.visibility = View.GONE
                 binding.showSetBtn.visibility = View.GONE
                 binding.exampleSetCardView.visibility = View.VISIBLE
+                if (screenWidth < 1080) {
+                    binding.examplePracticeBtn.textSize = 12f
+                    binding.exampleAddNewCardBtn.textSize = 12f
+                }
             }
         }
 
@@ -80,8 +88,10 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                     Snackbar
-                        .make(binding.spinner,
-                            getString(R.string.please_select_a_set), Snackbar.LENGTH_SHORT)
+                        .make(
+                            binding.spinner,
+                            getString(R.string.please_select_a_set), Snackbar.LENGTH_SHORT
+                        )
                         .show()
                 }
             }
@@ -95,13 +105,21 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
         }
 
         viewModel.getSetsAndCards().observe(this.viewLifecycleOwner) { setsAndQuestionsList ->
-            recyclerViewAdapter = SetsRecyclerViewAdapter(setsAndQuestionsList, this)
+
+            recyclerViewAdapter = if (screenWidth < 1080) {
+                SetsRecyclerViewAdapter(setsAndQuestionsList, this, 12f)
+            } else if (screenWidth in 1081..1280 && screenOrientation == 2) {
+                SetsRecyclerViewAdapter(setsAndQuestionsList, this, 0f)
+            } else {
+                SetsRecyclerViewAdapter(setsAndQuestionsList, this, 15f)
+            }
+
             binding.setsListRecyclerView.adapter = recyclerViewAdapter
 
-            if (requireActivity().resources.configuration.orientation == 1) {
+            if (screenOrientation == 1) {
                 binding.setsListRecyclerView.layoutManager =
                     LinearLayoutManager(requireContext())
-            } else if (requireActivity().resources.configuration.orientation == 2) {
+            } else if (screenOrientation == 2) {
                 binding.setsListRecyclerView.layoutManager =
                     GridLayoutManager(requireContext(), 2)
             }
@@ -142,7 +160,10 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
     override fun onMenuClick(menuView: View, setName: String) {
         val popupMenu = PopupMenu(requireContext(), menuView)
         popupMenu.inflate(R.menu.options_menu)
-        popupMenu.setForceShowIcon(true)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            popupMenu.setForceShowIcon(true)
+        }
 
         popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
             override fun onMenuItemClick(item: MenuItem?): Boolean {

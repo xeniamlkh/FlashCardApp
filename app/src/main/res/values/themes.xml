@@ -26,7 +26,7 @@
         <item name="snackbarStyle">@style/SnackBar</item>
         <item name="snackbarTextViewStyle">@style/SnackBarTextStyle</item>
 
-        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">1000</item>
 
     </style>
 

@@ -1,5 +1,6 @@
 package com.example.flashcardapp.ui.ui
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -85,7 +86,10 @@ class ListOfCardsFragment : Fragment(), MenuClickListener {
     override fun onMenuClick(menuView: View, cardId: Int) {
         val popupMenu = PopupMenu(requireContext(), menuView)
         popupMenu.inflate(R.menu.options_menu)
-        popupMenu.setForceShowIcon(true)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            popupMenu.setForceShowIcon(true)
+        }
 
         popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
             override fun onMenuItemClick(item: MenuItem?): Boolean {

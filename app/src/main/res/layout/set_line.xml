@@ -18,29 +18,31 @@
             android:id="@+id/set_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Name: Test set"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name: Test set" />
 
         <TextView
             android:id="@+id/number_of_cards_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Cards number = 0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/set_name_text" />
+            app:layout_constraintTop_toBottomOf="@id/set_name_text"
+            tools:text="Cards number = 0" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/practice_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:icon="@drawable/ic_school"
             android:text="@string/practice"
+            app:icon="@drawable/ic_school"
+            app:layout_constraintEnd_toStartOf="@+id/add_new_card_btn"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number_of_cards_text"/>
+            app:layout_constraintTop_toBottomOf="@id/number_of_cards_text" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/add_new_card_btn"
@@ -52,6 +54,7 @@
             app:icon="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/menu_options_btn"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@id/practice_btn" />
 
         <FrameLayout

@@ -20,7 +20,8 @@ interface RecyclerViewItemClickListener {
 
 class SetsRecyclerViewAdapter(
     private val sets: List<SetsAndCardsDataClass>,
-    private val itemClickListener: RecyclerViewItemClickListener
+    private val itemClickListener: RecyclerViewItemClickListener,
+    private val textSize: Float
 ) :
     RecyclerView.Adapter<SetsRecyclerViewAdapter.SetsViewHolder>() {
 
@@ -39,6 +40,9 @@ class SetsRecyclerViewAdapter(
             menuBtn = binding.menuOptionsBtn
             setView = binding.setCardView
             addCardBtn = binding.addNewCardBtn
+
+            practiceBtn.textSize = textSize
+            addCardBtn.textSize = textSize
 
             setView.setOnClickListener {
                 if (adapterPosition >= 0) {
