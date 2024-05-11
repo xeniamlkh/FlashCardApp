@@ -61,7 +61,7 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
                 binding.spinnerTitleTextView.visibility = View.GONE
                 binding.showSetBtn.visibility = View.GONE
                 binding.exampleSetCardView.visibility = View.VISIBLE
-                if (screenWidth < 1080) {
+                if (screenWidth <= 1080) {
                     binding.examplePracticeBtn.textSize = 12f
                     binding.exampleAddNewCardBtn.textSize = 12f
                 }
@@ -106,9 +106,9 @@ class ListOfSetsFragment : Fragment(), RecyclerViewItemClickListener {
 
         viewModel.getSetsAndCards().observe(this.viewLifecycleOwner) { setsAndQuestionsList ->
 
-            recyclerViewAdapter = if (screenWidth < 1080) {
+            recyclerViewAdapter = if (screenWidth <= 1080) {
                 SetsRecyclerViewAdapter(setsAndQuestionsList, this, 12f)
-            } else if (screenWidth in 1081..1280 && screenOrientation == 2) {
+            } else if (screenWidth in 1081..2220 && screenOrientation == 2) {
                 SetsRecyclerViewAdapter(setsAndQuestionsList, this, 0f)
             } else {
                 SetsRecyclerViewAdapter(setsAndQuestionsList, this, 15f)
