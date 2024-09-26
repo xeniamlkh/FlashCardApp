@@ -1,11 +1,46 @@
-# What is Flash Cards App?
-Flash Cards App is **a study project** in Kotlin for Android devices. Please be aware that this project was made for **learning purposes** only and will not be updated or supported further. 
-
-This README file has two paragraphs: 
-1) [Description](https://github.com/xeniamlkh/FlashCardApp?tab=readme-ov-file#description)
-2) [What was used in this project?](https://github.com/xeniamlkh/FlashCardApp?tab=readme-ov-file#what-was-used-in-this-project)
+# Flash Cards App
 
 ## Description
+Flash Cards App is the whose function is to create study cards and help users learn something new, such as foreign words, definitions, or dates.
+
+## Key Features
+The Flash Cards Application contains the following functionality:
+1) Flipping cards
+2) Card sets by themes
+3) Easy card management
+4) Progress and score tracking
+5) Quick navigation
+
+minSdk = 27; targetSdk = 34. Flash Cards App supports platform 8.1 (Oreo) and above.
+
+## Technologies Used
+*	Android Architecture: UI, Data
+*	Room database
+*	ViewModel
+*	LiveData
+*	RecyclerView
+*	View Bindings
+*	Navigation Graph
+*	Save Args
+*	ActionBarWithNavController
+*	Popup menu
+*	Spinner
+*	Scope functions: apply
+*	Constraint Layout
+*	Flow
+*	Coroutines
+*	ObjectAnimator
+*	ViewPager2
+*	Progress Bar
+*	AlertDialog
+*	Landscape View
+*	Snackbar
+*	Styles
+*	Light and Dark Themes
+*	DataStore
+*	SplashScreen API
+
+## Detailed Description
 Flash Cards App is a flash card application whose function is to create study cards and help users learn something new, such as foreign words, definitions, dates, and so on. 
 This description aims to show the structure of the study project, its functionality, and what instruments have been implemented.
 
@@ -90,32 +125,3 @@ This description aims to show the structure of the study project, its functional
 
   <img src="https://github.com/xeniamlkh/FlashCardApp/assets/89986215/00e3bcbe-39a9-4475-958f-34ef3c6aa8d3" width="307" height="633">
 
-* minSdk = 27; targetSdk = 34. Flash Cards App supports platform 8.1 (Oreo) and above.
-
-## What was used in this project?
-
-*	Android Architecture: UI, Model
-*	Room database
-*	ViewModel
-*	LiveData
-*	RecyclerView
-*	View Bindings
-*	Navigation Graph
-*	Save Args
-*	ActionBarWithNavController
-*	Popup menu
-*	Spinner
-*	Scope functions: apply
-*	Constraint Layout
-*	Flow
-*	Coroutines
-*	ObjectAnimator
-*	ViewPager2
-*	Progress Bar
-*	AlertDialog
-*	Landscape View
-*	Snackbar
-*	Styles
-*	Light and Dark Themes
-*	DataStore
-*	SplashScreen API
