@@ -1,7 +1,7 @@
 # Flash Cards App
 
 ## Description
-Flash Cards App is the whose function is to create study cards and help users learn something new, such as foreign words, definitions, or dates.
+Flash Cards App is the application whose function is to create study cards and help users learn something new, such as foreign words, definitions, or dates.
 
 ## Key Features
 The Flash Cards Application contains the following functionality:
