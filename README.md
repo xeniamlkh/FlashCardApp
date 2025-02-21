@@ -15,7 +15,7 @@ minSdk = 27; targetSdk = 34. Flash Cards App supports platform 8.1 (Oreo) and ab
 
 ## Technologies Used
 *	Android Architecture: UI, Data
-*	Room database
+*	Room
 *	ViewModel
 *	LiveData
 *	RecyclerView
